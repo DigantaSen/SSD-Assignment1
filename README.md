@@ -77,7 +77,8 @@ Declaration
 This submission was prepared individually. 
 I used OpenAI’s ChatGPT (LLM) for assistance in:
 - Reviewing SQL and MongoDB query correctness.
-- Drafting this README.TXT.
+- Some help regarding the queries.
+- Drafting this README.md.
 
 All final code and results were verified locally before submission.
 

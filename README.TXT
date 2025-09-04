@@ -75,10 +75,16 @@ Assumptions:
 Declaration
 --------------------------------------------------
 This submission was prepared individually. 
-I used OpenAI’s ChatGPT (LLM) for assistance in:
-- Reviewing SQL and MongoDB query correctness.
-- Some help regarding the queries.
-- Drafting this README.TXT.
+
+I used OpenAI ChatGPT (LLM) for limited assistance in this assignment. 
+Specifically, I asked for:
+- Clarification of SQL concepts (e.g., using window functions like LAG for calculating stage-wise turnaround time). 
+- Guidance on MongoDB aggregation pipelines (grouping by city and month). 
+- Help drafting a README file in a clear format. 
+
+All code was written, verified, and tested by me. 
+I did not copy-paste entire solutions; instead, I used the LLM to better understand concepts and debug errors.
+
 
 All final code and results were verified locally before submission.
 

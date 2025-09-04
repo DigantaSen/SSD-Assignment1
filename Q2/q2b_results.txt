@@ -1,0 +1,33 @@
+
+[Q2(b.1)] Top 5 hottest days nationwide:
+
+{"_id":{"$date":"2025-06-09T00:00:00Z"},"nationwide_avg_temp":34.566}
+{"_id":{"$date":"2025-06-07T00:00:00Z"},"nationwide_avg_temp":34.465}
+{"_id":{"$date":"2025-06-06T00:00:00Z"},"nationwide_avg_temp":34.421}
+{"_id":{"$date":"2025-06-17T00:00:00Z"},"nationwide_avg_temp":34.393}
+{"_id":{"$date":"2025-06-11T00:00:00Z"},"nationwide_avg_temp":34.385}
+
+[Q2(b.2)] Top 5 coldest days nationwide:
+
+{"_id":{"$date":"2025-01-04T00:00:00Z"},"nationwide_avg_temp":19.824}
+{"_id":{"$date":"2025-01-03T00:00:00Z"},"nationwide_avg_temp":19.855}
+{"_id":{"$date":"2025-01-02T00:00:00Z"},"nationwide_avg_temp":19.879}
+{"_id":{"$date":"2025-01-06T00:00:00Z"},"nationwide_avg_temp":19.912}
+{"_id":{"$date":"2025-01-01T00:00:00Z"},"nationwide_avg_temp":20.027}
+
+[Q2(b.3)] Was it raining in Mumbai on 2025-06-15?
+
+{"city":"Mumbai","date":"2025-06-15","rained":false,"condition":null,"precipitation_mm":0}
+
+[Q2(b.4)] 7-day moving average for Delhi (last 10 days of June):
+
+{"date":{"$date":"2025-06-21T00:00:00Z"},"avg_c":34.9,"seven_day_avg_temp":34.428571}
+{"date":{"$date":"2025-06-22T00:00:00Z"},"avg_c":35.8,"seven_day_avg_temp":34.971429}
+{"date":{"$date":"2025-06-23T00:00:00Z"},"avg_c":37.3,"seven_day_avg_temp":35.428571}
+{"date":{"$date":"2025-06-24T00:00:00Z"},"avg_c":33.2,"seven_day_avg_temp":35.085714}
+{"date":{"$date":"2025-06-25T00:00:00Z"},"avg_c":34,"seven_day_avg_temp":35.171429}
+{"date":{"$date":"2025-06-26T00:00:00Z"},"avg_c":37.6,"seven_day_avg_temp":35.3}
+{"date":{"$date":"2025-06-27T00:00:00Z"},"avg_c":33,"seven_day_avg_temp":35.114286}
+{"date":{"$date":"2025-06-28T00:00:00Z"},"avg_c":34.8,"seven_day_avg_temp":35.1}
+{"date":{"$date":"2025-06-29T00:00:00Z"},"avg_c":35.8,"seven_day_avg_temp":35.1}
+{"date":{"$date":"2025-06-30T00:00:00Z"},"avg_c":33.2,"seven_day_avg_temp":34.514286}

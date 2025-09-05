@@ -1,33 +1,44 @@
-
 [Q2(b.1)] Top 5 hottest days nationwide:
 
-{"_id":{"$date":"2025-06-09T00:00:00Z"},"nationwide_avg_temp":34.566}
-{"_id":{"$date":"2025-06-07T00:00:00Z"},"nationwide_avg_temp":34.465}
-{"_id":{"$date":"2025-06-06T00:00:00Z"},"nationwide_avg_temp":34.421}
-{"_id":{"$date":"2025-06-17T00:00:00Z"},"nationwide_avg_temp":34.393}
-{"_id":{"$date":"2025-06-11T00:00:00Z"},"nationwide_avg_temp":34.385}
+{"date":"2025-06-09","nationwide_avg_temp":34.57}
+{"date":"2025-06-07","nationwide_avg_temp":34.47}
+{"date":"2025-06-06","nationwide_avg_temp":34.42}
+{"date":"2025-06-17","nationwide_avg_temp":34.39}
+{"date":"2025-06-11","nationwide_avg_temp":34.38}
 
 [Q2(b.2)] Top 5 coldest days nationwide:
 
-{"_id":{"$date":"2025-01-04T00:00:00Z"},"nationwide_avg_temp":19.824}
-{"_id":{"$date":"2025-01-03T00:00:00Z"},"nationwide_avg_temp":19.855}
-{"_id":{"$date":"2025-01-02T00:00:00Z"},"nationwide_avg_temp":19.879}
-{"_id":{"$date":"2025-01-06T00:00:00Z"},"nationwide_avg_temp":19.912}
-{"_id":{"$date":"2025-01-01T00:00:00Z"},"nationwide_avg_temp":20.027}
+{"date":"2025-01-01","nationwide_avg_temp":20.03}
+{"date":"2025-01-02","nationwide_avg_temp":19.88}
+{"date":"2025-01-03","nationwide_avg_temp":19.86}
+{"date":"2025-01-04","nationwide_avg_temp":19.82}
+{"date":"2025-01-06","nationwide_avg_temp":19.91}
 
-[Q2(b.3)] Was it raining in Mumbai on 2025-06-15?
+[Q2(b.3)] Was it raining in Navi Mumbai on 2025-06-17?
 
-{"city":"Mumbai","date":"2025-06-15","rained":false,"condition":null,"precipitation_mm":0}
+{"city":"Navi Mumbai","date":"2025-06-17","rained":true,"condition":"Rain","precipitation_mm":11.1}
 
-[Q2(b.4)] 7-day moving average for Delhi (last 10 days of June):
+[Q2(b.4)] 7-day moving average for Delhi (2025-05-24 to 2025-06-14):
 
-{"date":{"$date":"2025-06-21T00:00:00Z"},"avg_c":34.9,"seven_day_avg_temp":34.428571}
-{"date":{"$date":"2025-06-22T00:00:00Z"},"avg_c":35.8,"seven_day_avg_temp":34.971429}
-{"date":{"$date":"2025-06-23T00:00:00Z"},"avg_c":37.3,"seven_day_avg_temp":35.428571}
-{"date":{"$date":"2025-06-24T00:00:00Z"},"avg_c":33.2,"seven_day_avg_temp":35.085714}
-{"date":{"$date":"2025-06-25T00:00:00Z"},"avg_c":34,"seven_day_avg_temp":35.171429}
-{"date":{"$date":"2025-06-26T00:00:00Z"},"avg_c":37.6,"seven_day_avg_temp":35.3}
-{"date":{"$date":"2025-06-27T00:00:00Z"},"avg_c":33,"seven_day_avg_temp":35.114286}
-{"date":{"$date":"2025-06-28T00:00:00Z"},"avg_c":34.8,"seven_day_avg_temp":35.1}
-{"date":{"$date":"2025-06-29T00:00:00Z"},"avg_c":35.8,"seven_day_avg_temp":35.1}
-{"date":{"$date":"2025-06-30T00:00:00Z"},"avg_c":33.2,"seven_day_avg_temp":34.514286}
+{"date":"2025-05-24","avg_c":35.2,"seven_day_avg_temp":34.371429}
+{"date":"2025-05-25","avg_c":35.2,"seven_day_avg_temp":34.628571}
+{"date":"2025-05-26","avg_c":36.3,"seven_day_avg_temp":34.785714}
+{"date":"2025-05-27","avg_c":34.8,"seven_day_avg_temp":34.957143}
+{"date":"2025-05-28","avg_c":35.1,"seven_day_avg_temp":34.871429}
+{"date":"2025-05-29","avg_c":33.7,"seven_day_avg_temp":34.885714}
+{"date":"2025-05-30","avg_c":35.1,"seven_day_avg_temp":35.057143}
+{"date":"2025-05-31","avg_c":35.5,"seven_day_avg_temp":35.1}
+{"date":"2025-06-01","avg_c":39.4,"seven_day_avg_temp":35.7}
+{"date":"2025-06-02","avg_c":33,"seven_day_avg_temp":35.228571}
+{"date":"2025-06-03","avg_c":34,"seven_day_avg_temp":35.114286}
+{"date":"2025-06-04","avg_c":35.3,"seven_day_avg_temp":35.142857}
+{"date":"2025-06-05","avg_c":29.6,"seven_day_avg_temp":34.557143}
+{"date":"2025-06-06","avg_c":32,"seven_day_avg_temp":34.114286}
+{"date":"2025-06-07","avg_c":38.5,"seven_day_avg_temp":34.542857}
+{"date":"2025-06-08","avg_c":34.9,"seven_day_avg_temp":33.9}
+{"date":"2025-06-09","avg_c":37,"seven_day_avg_temp":34.471429}
+{"date":"2025-06-10","avg_c":36,"seven_day_avg_temp":34.757143}
+{"date":"2025-06-11","avg_c":34.3,"seven_day_avg_temp":34.614286}
+{"date":"2025-06-12","avg_c":33.4,"seven_day_avg_temp":35.157143}
+{"date":"2025-06-13","avg_c":35.6,"seven_day_avg_temp":35.671429}
+{"date":"2025-06-14","avg_c":33.5,"seven_day_avg_temp":34.957143}

@@ -1,439 +1,112 @@
 -- Q1a: Admission Funnel Output
 
-Technical Entrance Test	10000	
-IQ Test	2000	42.00
-Descriptive Exam	500	45.00
-Face-to-Face Interview	120	56.00
+Technical Entrance Test	10000	2000	8000	42.0
+IQ Test	2000	500	1500	45.0
+Descriptive Exam	500	120	380	56.0
+Face-to-Face Interview	120	80	40	
 
 -- Q1b: Pass/Fail Rate by Gender, Age Band, and City
 
-Technical Entrance Test	Female	18-20	Ahmedabad	18.4783
-Technical Entrance Test	Female	18-20	Bengaluru	23.2759
-Technical Entrance Test	Female	18-20	Bhopal	21.8391
-Technical Entrance Test	Female	18-20	Bhubaneswar	20.2128
-Technical Entrance Test	Female	18-20	Chandigarh	18.2927
-Technical Entrance Test	Female	18-20	Chennai	17.2043
-Technical Entrance Test	Female	18-20	Delhi	17.7083
-Technical Entrance Test	Female	18-20	Gurugram	22.5225
-Technical Entrance Test	Female	18-20	Guwahati	21.2500
-Technical Entrance Test	Female	18-20	Hyderabad	23.0000
-Technical Entrance Test	Female	18-20	Jaipur	19.3182
-Technical Entrance Test	Female	18-20	Kochi	10.3896
-Technical Entrance Test	Female	18-20	Kolkata	25.0000
-Technical Entrance Test	Female	18-20	Lucknow	21.5054
-Technical Entrance Test	Female	18-20	Mumbai	21.5054
-Technical Entrance Test	Female	18-20	Noida	20.4082
-Technical Entrance Test	Female	18-20	Patna	20.0000
-Technical Entrance Test	Female	18-20	Pune	20.4082
-Technical Entrance Test	Female	18-20	Thiruvananthapuram	25.2747
-Technical Entrance Test	Female	18-20	Visakhapatnam	12.2449
-Technical Entrance Test	Female	21-23	Ahmedabad	23.0000
-Technical Entrance Test	Female	21-23	Bengaluru	14.4231
-Technical Entrance Test	Female	21-23	Bhopal	17.2727
-Technical Entrance Test	Female	21-23	Bhubaneswar	20.7792
-Technical Entrance Test	Female	21-23	Chandigarh	20.4545
-Technical Entrance Test	Female	21-23	Chennai	14.2857
-Technical Entrance Test	Female	21-23	Delhi	22.8916
-Technical Entrance Test	Female	21-23	Gurugram	17.4312
-Technical Entrance Test	Female	21-23	Guwahati	19.2308
-Technical Entrance Test	Female	21-23	Hyderabad	20.6897
-Technical Entrance Test	Female	21-23	Jaipur	21.3483
-Technical Entrance Test	Female	21-23	Kochi	24.2105
-Technical Entrance Test	Female	21-23	Kolkata	20.8333
-Technical Entrance Test	Female	21-23	Lucknow	15.0000
-Technical Entrance Test	Female	21-23	Mumbai	13.8298
-Technical Entrance Test	Female	21-23	Noida	24.5283
-Technical Entrance Test	Female	21-23	Patna	11.7021
-Technical Entrance Test	Female	21-23	Pune	22.5000
-Technical Entrance Test	Female	21-23	Thiruvananthapuram	21.4286
-Technical Entrance Test	Female	21-23	Visakhapatnam	29.4118
-Technical Entrance Test	Female	24-25	Ahmedabad	23.2877
-Technical Entrance Test	Female	24-25	Bengaluru	26.6667
-Technical Entrance Test	Female	24-25	Bhopal	18.3333
-Technical Entrance Test	Female	24-25	Bhubaneswar	22.5806
-Technical Entrance Test	Female	24-25	Chandigarh	10.9375
-Technical Entrance Test	Female	24-25	Chennai	21.5385
-Technical Entrance Test	Female	24-25	Delhi	12.0690
-Technical Entrance Test	Female	24-25	Gurugram	28.5714
-Technical Entrance Test	Female	24-25	Guwahati	21.0526
-Technical Entrance Test	Female	24-25	Hyderabad	16.9811
-Technical Entrance Test	Female	24-25	Jaipur	18.7500
-Technical Entrance Test	Female	24-25	Kochi	16.1290
-Technical Entrance Test	Female	24-25	Kolkata	26.1538
-Technical Entrance Test	Female	24-25	Lucknow	19.7183
-Technical Entrance Test	Female	24-25	Mumbai	25.4902
-Technical Entrance Test	Female	24-25	Noida	22.5806
-Technical Entrance Test	Female	24-25	Patna	20.0000
-Technical Entrance Test	Female	24-25	Pune	28.7879
-Technical Entrance Test	Female	24-25	Thiruvananthapuram	13.4328
-Technical Entrance Test	Female	24-25	Visakhapatnam	15.3846
-Technical Entrance Test	Male	18-20	Ahmedabad	22.1053
-Technical Entrance Test	Male	18-20	Bengaluru	22.2222
-Technical Entrance Test	Male	18-20	Bhopal	17.5824
-Technical Entrance Test	Male	18-20	Bhubaneswar	16.4835
-Technical Entrance Test	Male	18-20	Chandigarh	17.5258
-Technical Entrance Test	Male	18-20	Chennai	25.2747
-Technical Entrance Test	Male	18-20	Delhi	19.2308
-Technical Entrance Test	Male	18-20	Gurugram	14.2857
-Technical Entrance Test	Male	18-20	Guwahati	16.5217
-Technical Entrance Test	Male	18-20	Hyderabad	19.3182
-Technical Entrance Test	Male	18-20	Jaipur	16.8224
-Technical Entrance Test	Male	18-20	Kochi	16.6667
-Technical Entrance Test	Male	18-20	Kolkata	11.8812
-Technical Entrance Test	Male	18-20	Lucknow	23.0769
-Technical Entrance Test	Male	18-20	Mumbai	16.4835
-Technical Entrance Test	Male	18-20	Noida	26.3158
-Technical Entrance Test	Male	18-20	Patna	20.1835
-Technical Entrance Test	Male	18-20	Pune	17.8947
-Technical Entrance Test	Male	18-20	Thiruvananthapuram	13.3333
-Technical Entrance Test	Male	18-20	Visakhapatnam	21.0000
-Technical Entrance Test	Male	21-23	Ahmedabad	24.1758
-Technical Entrance Test	Male	21-23	Bengaluru	21.2389
-Technical Entrance Test	Male	21-23	Bhopal	11.5789
-Technical Entrance Test	Male	21-23	Bhubaneswar	22.4719
-Technical Entrance Test	Male	21-23	Chandigarh	18.0000
-Technical Entrance Test	Male	21-23	Chennai	22.5490
-Technical Entrance Test	Male	21-23	Delhi	20.4545
-Technical Entrance Test	Male	21-23	Gurugram	18.6813
-Technical Entrance Test	Male	21-23	Guwahati	23.5955
-Technical Entrance Test	Male	21-23	Hyderabad	16.0920
-Technical Entrance Test	Male	21-23	Jaipur	21.7822
-Technical Entrance Test	Male	21-23	Kochi	18.9189
-Technical Entrance Test	Male	21-23	Kolkata	23.3333
-Technical Entrance Test	Male	21-23	Lucknow	17.1429
-Technical Entrance Test	Male	21-23	Mumbai	25.3012
-Technical Entrance Test	Male	21-23	Noida	21.2500
-Technical Entrance Test	Male	21-23	Patna	22.6190
-Technical Entrance Test	Male	21-23	Pune	15.2174
-Technical Entrance Test	Male	21-23	Thiruvananthapuram	18.1818
-Technical Entrance Test	Male	21-23	Visakhapatnam	23.0769
-Technical Entrance Test	Male	24-25	Ahmedabad	24.1935
-Technical Entrance Test	Male	24-25	Bengaluru	26.9841
-Technical Entrance Test	Male	24-25	Bhopal	30.6452
-Technical Entrance Test	Male	24-25	Bhubaneswar	20.6897
-Technical Entrance Test	Male	24-25	Chandigarh	26.9841
-Technical Entrance Test	Male	24-25	Chennai	10.7143
-Technical Entrance Test	Male	24-25	Delhi	20.3390
-Technical Entrance Test	Male	24-25	Gurugram	14.9254
-Technical Entrance Test	Male	24-25	Guwahati	20.3390
-Technical Entrance Test	Male	24-25	Hyderabad	18.9655
-Technical Entrance Test	Male	24-25	Jaipur	16.1290
-Technical Entrance Test	Male	24-25	Kochi	20.3390
-Technical Entrance Test	Male	24-25	Kolkata	36.6197
-Technical Entrance Test	Male	24-25	Lucknow	24.1935
-Technical Entrance Test	Male	24-25	Mumbai	13.8462
-Technical Entrance Test	Male	24-25	Noida	20.0000
-Technical Entrance Test	Male	24-25	Patna	21.3115
-Technical Entrance Test	Male	24-25	Pune	26.2295
-Technical Entrance Test	Male	24-25	Thiruvananthapuram	21.0526
-Technical Entrance Test	Male	24-25	Visakhapatnam	16.6667
-IQ Test	Female	18-20	Ahmedabad	17.6471
-IQ Test	Female	18-20	Bengaluru	29.6296
-IQ Test	Female	18-20	Bhopal	26.3158
-IQ Test	Female	18-20	Bhubaneswar	21.0526
-IQ Test	Female	18-20	Chandigarh	0.0000
-IQ Test	Female	18-20	Chennai	12.5000
-IQ Test	Female	18-20	Delhi	5.8824
-IQ Test	Female	18-20	Gurugram	24.0000
-IQ Test	Female	18-20	Guwahati	17.6471
-IQ Test	Female	18-20	Hyderabad	47.8261
-IQ Test	Female	18-20	Jaipur	23.5294
-IQ Test	Female	18-20	Kochi	12.5000
-IQ Test	Female	18-20	Kolkata	8.3333
-IQ Test	Female	18-20	Lucknow	20.0000
-IQ Test	Female	18-20	Mumbai	35.0000
-IQ Test	Female	18-20	Noida	30.0000
-IQ Test	Female	18-20	Patna	31.5789
-IQ Test	Female	18-20	Pune	35.0000
-IQ Test	Female	18-20	Thiruvananthapuram	17.3913
-IQ Test	Female	18-20	Visakhapatnam	33.3333
-IQ Test	Female	21-23	Ahmedabad	30.4348
-IQ Test	Female	21-23	Bengaluru	13.3333
-IQ Test	Female	21-23	Bhopal	26.3158
-IQ Test	Female	21-23	Bhubaneswar	18.7500
-IQ Test	Female	21-23	Chandigarh	22.2222
-IQ Test	Female	21-23	Chennai	35.7143
-IQ Test	Female	21-23	Delhi	31.5789
-IQ Test	Female	21-23	Gurugram	31.5789
-IQ Test	Female	21-23	Guwahati	45.0000
-IQ Test	Female	21-23	Hyderabad	38.8889
-IQ Test	Female	21-23	Jaipur	36.8421
-IQ Test	Female	21-23	Kochi	26.0870
-IQ Test	Female	21-23	Kolkata	5.0000
-IQ Test	Female	21-23	Lucknow	33.3333
-IQ Test	Female	21-23	Mumbai	30.7692
-IQ Test	Female	21-23	Noida	26.9231
-IQ Test	Female	21-23	Patna	45.4545
-IQ Test	Female	21-23	Pune	33.3333
-IQ Test	Female	21-23	Thiruvananthapuram	26.6667
-IQ Test	Female	21-23	Visakhapatnam	24.0000
-IQ Test	Female	24-25	Ahmedabad	5.8824
-IQ Test	Female	24-25	Bengaluru	0.0000
-IQ Test	Female	24-25	Bhopal	18.1818
-IQ Test	Female	24-25	Bhubaneswar	7.1429
-IQ Test	Female	24-25	Chandigarh	42.8571
-IQ Test	Female	24-25	Chennai	35.7143
-IQ Test	Female	24-25	Delhi	14.2857
-IQ Test	Female	24-25	Gurugram	11.1111
-IQ Test	Female	24-25	Guwahati	25.0000
-IQ Test	Female	24-25	Hyderabad	33.3333
-IQ Test	Female	24-25	Jaipur	16.6667
-IQ Test	Female	24-25	Kochi	20.0000
-IQ Test	Female	24-25	Kolkata	23.5294
-IQ Test	Female	24-25	Lucknow	35.7143
-IQ Test	Female	24-25	Mumbai	15.3846
-IQ Test	Female	24-25	Noida	35.7143
-IQ Test	Female	24-25	Patna	54.5455
-IQ Test	Female	24-25	Pune	36.8421
-IQ Test	Female	24-25	Thiruvananthapuram	22.2222
-IQ Test	Female	24-25	Visakhapatnam	10.0000
-IQ Test	Male	18-20	Ahmedabad	28.5714
-IQ Test	Male	18-20	Bengaluru	16.6667
-IQ Test	Male	18-20	Bhopal	31.2500
-IQ Test	Male	18-20	Bhubaneswar	40.0000
-IQ Test	Male	18-20	Chandigarh	41.1765
-IQ Test	Male	18-20	Chennai	21.7391
-IQ Test	Male	18-20	Delhi	45.0000
-IQ Test	Male	18-20	Gurugram	18.1818
-IQ Test	Male	18-20	Guwahati	26.3158
-IQ Test	Male	18-20	Hyderabad	17.6471
-IQ Test	Male	18-20	Jaipur	33.3333
-IQ Test	Male	18-20	Kochi	18.7500
-IQ Test	Male	18-20	Kolkata	16.6667
-IQ Test	Male	18-20	Lucknow	38.8889
-IQ Test	Male	18-20	Mumbai	46.6667
-IQ Test	Male	18-20	Noida	28.0000
-IQ Test	Male	18-20	Patna	18.1818
-IQ Test	Male	18-20	Pune	35.2941
-IQ Test	Male	18-20	Thiruvananthapuram	25.0000
-IQ Test	Male	18-20	Visakhapatnam	9.5238
-IQ Test	Male	21-23	Ahmedabad	18.1818
-IQ Test	Male	21-23	Bengaluru	20.8333
-IQ Test	Male	21-23	Bhopal	0.0000
-IQ Test	Male	21-23	Bhubaneswar	20.0000
-IQ Test	Male	21-23	Chandigarh	33.3333
-IQ Test	Male	21-23	Chennai	21.7391
-IQ Test	Male	21-23	Delhi	22.2222
-IQ Test	Male	21-23	Gurugram	11.7647
-IQ Test	Male	21-23	Guwahati	23.8095
-IQ Test	Male	21-23	Hyderabad	28.5714
-IQ Test	Male	21-23	Jaipur	27.2727
-IQ Test	Male	21-23	Kochi	14.2857
-IQ Test	Male	21-23	Kolkata	33.3333
-IQ Test	Male	21-23	Lucknow	27.7778
-IQ Test	Male	21-23	Mumbai	33.3333
-IQ Test	Male	21-23	Noida	11.7647
-IQ Test	Male	21-23	Patna	21.0526
-IQ Test	Male	21-23	Pune	42.8571
-IQ Test	Male	21-23	Thiruvananthapuram	31.2500
-IQ Test	Male	21-23	Visakhapatnam	27.7778
-IQ Test	Male	24-25	Ahmedabad	20.0000
-IQ Test	Male	24-25	Bengaluru	29.4118
-IQ Test	Male	24-25	Bhopal	26.3158
-IQ Test	Male	24-25	Bhubaneswar	33.3333
-IQ Test	Male	24-25	Chandigarh	11.7647
-IQ Test	Male	24-25	Chennai	16.6667
-IQ Test	Male	24-25	Delhi	33.3333
-IQ Test	Male	24-25	Gurugram	30.0000
-IQ Test	Male	24-25	Guwahati	33.3333
-IQ Test	Male	24-25	Hyderabad	27.2727
-IQ Test	Male	24-25	Jaipur	10.0000
-IQ Test	Male	24-25	Kochi	25.0000
-IQ Test	Male	24-25	Kolkata	26.9231
-IQ Test	Male	24-25	Lucknow	13.3333
-IQ Test	Male	24-25	Mumbai	22.2222
-IQ Test	Male	24-25	Noida	10.0000
-IQ Test	Male	24-25	Patna	46.1538
-IQ Test	Male	24-25	Pune	18.7500
-IQ Test	Male	24-25	Thiruvananthapuram	6.2500
-IQ Test	Male	24-25	Visakhapatnam	20.0000
-Descriptive Exam	Female	18-20	Ahmedabad	0.0000
-Descriptive Exam	Female	18-20	Bengaluru	37.5000
-Descriptive Exam	Female	18-20	Bhopal	20.0000
-Descriptive Exam	Female	18-20	Bhubaneswar	25.0000
-Descriptive Exam	Female	18-20	Chennai	50.0000
-Descriptive Exam	Female	18-20	Delhi	0.0000
-Descriptive Exam	Female	18-20	Gurugram	0.0000
-Descriptive Exam	Female	18-20	Guwahati	0.0000
-Descriptive Exam	Female	18-20	Hyderabad	45.4545
-Descriptive Exam	Female	18-20	Jaipur	0.0000
-Descriptive Exam	Female	18-20	Kochi	0.0000
-Descriptive Exam	Female	18-20	Kolkata	100.0000
-Descriptive Exam	Female	18-20	Lucknow	75.0000
-Descriptive Exam	Female	18-20	Mumbai	42.8571
-Descriptive Exam	Female	18-20	Noida	16.6667
-Descriptive Exam	Female	18-20	Patna	33.3333
-Descriptive Exam	Female	18-20	Pune	28.5714
-Descriptive Exam	Female	18-20	Thiruvananthapuram	25.0000
-Descriptive Exam	Female	18-20	Visakhapatnam	75.0000
-Descriptive Exam	Female	21-23	Ahmedabad	28.5714
-Descriptive Exam	Female	21-23	Bengaluru	0.0000
-Descriptive Exam	Female	21-23	Bhopal	20.0000
-Descriptive Exam	Female	21-23	Bhubaneswar	33.3333
-Descriptive Exam	Female	21-23	Chandigarh	0.0000
-Descriptive Exam	Female	21-23	Chennai	60.0000
-Descriptive Exam	Female	21-23	Delhi	66.6667
-Descriptive Exam	Female	21-23	Gurugram	33.3333
-Descriptive Exam	Female	21-23	Guwahati	33.3333
-Descriptive Exam	Female	21-23	Hyderabad	14.2857
-Descriptive Exam	Female	21-23	Jaipur	42.8571
-Descriptive Exam	Female	21-23	Kochi	33.3333
-Descriptive Exam	Female	21-23	Kolkata	0.0000
-Descriptive Exam	Female	21-23	Lucknow	20.0000
-Descriptive Exam	Female	21-23	Mumbai	0.0000
-Descriptive Exam	Female	21-23	Noida	14.2857
-Descriptive Exam	Female	21-23	Patna	40.0000
-Descriptive Exam	Female	21-23	Pune	50.0000
-Descriptive Exam	Female	21-23	Thiruvananthapuram	25.0000
-Descriptive Exam	Female	21-23	Visakhapatnam	33.3333
-Descriptive Exam	Female	24-25	Ahmedabad	0.0000
-Descriptive Exam	Female	24-25	Bhopal	100.0000
-Descriptive Exam	Female	24-25	Bhubaneswar	0.0000
-Descriptive Exam	Female	24-25	Chandigarh	66.6667
-Descriptive Exam	Female	24-25	Chennai	40.0000
-Descriptive Exam	Female	24-25	Delhi	100.0000
-Descriptive Exam	Female	24-25	Gurugram	50.0000
-Descriptive Exam	Female	24-25	Guwahati	0.0000
-Descriptive Exam	Female	24-25	Hyderabad	0.0000
-Descriptive Exam	Female	24-25	Jaipur	100.0000
-Descriptive Exam	Female	24-25	Kochi	0.0000
-Descriptive Exam	Female	24-25	Kolkata	0.0000
-Descriptive Exam	Female	24-25	Lucknow	40.0000
-Descriptive Exam	Female	24-25	Mumbai	0.0000
-Descriptive Exam	Female	24-25	Noida	20.0000
-Descriptive Exam	Female	24-25	Patna	16.6667
-Descriptive Exam	Female	24-25	Pune	0.0000
-Descriptive Exam	Female	24-25	Thiruvananthapuram	0.0000
-Descriptive Exam	Female	24-25	Visakhapatnam	0.0000
-Descriptive Exam	Male	18-20	Ahmedabad	16.6667
-Descriptive Exam	Male	18-20	Bengaluru	0.0000
-Descriptive Exam	Male	18-20	Bhopal	0.0000
-Descriptive Exam	Male	18-20	Bhubaneswar	0.0000
-Descriptive Exam	Male	18-20	Chandigarh	14.2857
-Descriptive Exam	Male	18-20	Chennai	20.0000
-Descriptive Exam	Male	18-20	Delhi	11.1111
-Descriptive Exam	Male	18-20	Gurugram	0.0000
-Descriptive Exam	Male	18-20	Guwahati	0.0000
-Descriptive Exam	Male	18-20	Hyderabad	33.3333
-Descriptive Exam	Male	18-20	Jaipur	16.6667
-Descriptive Exam	Male	18-20	Kochi	0.0000
-Descriptive Exam	Male	18-20	Kolkata	0.0000
-Descriptive Exam	Male	18-20	Lucknow	0.0000
-Descriptive Exam	Male	18-20	Mumbai	14.2857
-Descriptive Exam	Male	18-20	Noida	14.2857
-Descriptive Exam	Male	18-20	Patna	25.0000
-Descriptive Exam	Male	18-20	Pune	16.6667
-Descriptive Exam	Male	18-20	Thiruvananthapuram	0.0000
-Descriptive Exam	Male	18-20	Visakhapatnam	0.0000
-Descriptive Exam	Male	21-23	Ahmedabad	75.0000
-Descriptive Exam	Male	21-23	Bengaluru	20.0000
-Descriptive Exam	Male	21-23	Bhubaneswar	0.0000
-Descriptive Exam	Male	21-23	Chandigarh	0.0000
-Descriptive Exam	Male	21-23	Chennai	0.0000
-Descriptive Exam	Male	21-23	Delhi	50.0000
-Descriptive Exam	Male	21-23	Gurugram	0.0000
-Descriptive Exam	Male	21-23	Guwahati	20.0000
-Descriptive Exam	Male	21-23	Hyderabad	0.0000
-Descriptive Exam	Male	21-23	Jaipur	50.0000
-Descriptive Exam	Male	21-23	Kochi	33.3333
-Descriptive Exam	Male	21-23	Kolkata	0.0000
-Descriptive Exam	Male	21-23	Lucknow	20.0000
-Descriptive Exam	Male	21-23	Mumbai	28.5714
-Descriptive Exam	Male	21-23	Noida	0.0000
-Descriptive Exam	Male	21-23	Patna	50.0000
-Descriptive Exam	Male	21-23	Pune	0.0000
-Descriptive Exam	Male	21-23	Thiruvananthapuram	20.0000
-Descriptive Exam	Male	21-23	Visakhapatnam	40.0000
-Descriptive Exam	Male	24-25	Ahmedabad	0.0000
-Descriptive Exam	Male	24-25	Bengaluru	40.0000
-Descriptive Exam	Male	24-25	Bhopal	20.0000
-Descriptive Exam	Male	24-25	Bhubaneswar	25.0000
-Descriptive Exam	Male	24-25	Chandigarh	0.0000
-Descriptive Exam	Male	24-25	Chennai	0.0000
-Descriptive Exam	Male	24-25	Delhi	50.0000
-Descriptive Exam	Male	24-25	Gurugram	0.0000
-Descriptive Exam	Male	24-25	Guwahati	50.0000
-Descriptive Exam	Male	24-25	Hyderabad	33.3333
-Descriptive Exam	Male	24-25	Jaipur	100.0000
-Descriptive Exam	Male	24-25	Kochi	33.3333
-Descriptive Exam	Male	24-25	Kolkata	57.1429
-Descriptive Exam	Male	24-25	Lucknow	0.0000
-Descriptive Exam	Male	24-25	Mumbai	50.0000
-Descriptive Exam	Male	24-25	Noida	0.0000
-Descriptive Exam	Male	24-25	Patna	16.6667
-Descriptive Exam	Male	24-25	Pune	0.0000
-Descriptive Exam	Male	24-25	Thiruvananthapuram	0.0000
-Descriptive Exam	Male	24-25	Visakhapatnam	0.0000
-Face-to-Face Interview	Female	18-20	Bengaluru	100.0000
-Face-to-Face Interview	Female	18-20	Bhopal	0.0000
-Face-to-Face Interview	Female	18-20	Bhubaneswar	0.0000
-Face-to-Face Interview	Female	18-20	Chennai	100.0000
-Face-to-Face Interview	Female	18-20	Hyderabad	40.0000
-Face-to-Face Interview	Female	18-20	Kolkata	50.0000
-Face-to-Face Interview	Female	18-20	Lucknow	66.6667
-Face-to-Face Interview	Female	18-20	Mumbai	33.3333
-Face-to-Face Interview	Female	18-20	Noida	100.0000
-Face-to-Face Interview	Female	18-20	Patna	50.0000
-Face-to-Face Interview	Female	18-20	Pune	100.0000
-Face-to-Face Interview	Female	18-20	Thiruvananthapuram	100.0000
-Face-to-Face Interview	Female	18-20	Visakhapatnam	66.6667
-Face-to-Face Interview	Female	21-23	Ahmedabad	0.0000
-Face-to-Face Interview	Female	21-23	Bhopal	100.0000
-Face-to-Face Interview	Female	21-23	Bhubaneswar	0.0000
-Face-to-Face Interview	Female	21-23	Chennai	66.6667
-Face-to-Face Interview	Female	21-23	Delhi	75.0000
-Face-to-Face Interview	Female	21-23	Gurugram	50.0000
-Face-to-Face Interview	Female	21-23	Guwahati	66.6667
-Face-to-Face Interview	Female	21-23	Hyderabad	100.0000
-Face-to-Face Interview	Female	21-23	Jaipur	100.0000
-Face-to-Face Interview	Female	21-23	Kochi	50.0000
-Face-to-Face Interview	Female	21-23	Lucknow	100.0000
-Face-to-Face Interview	Female	21-23	Noida	0.0000
-Face-to-Face Interview	Female	21-23	Patna	100.0000
-Face-to-Face Interview	Female	21-23	Pune	66.6667
-Face-to-Face Interview	Female	21-23	Thiruvananthapuram	100.0000
-Face-to-Face Interview	Female	21-23	Visakhapatnam	100.0000
-Face-to-Face Interview	Female	24-25	Bhopal	100.0000
-Face-to-Face Interview	Female	24-25	Chandigarh	50.0000
-Face-to-Face Interview	Female	24-25	Chennai	50.0000
-Face-to-Face Interview	Female	24-25	Delhi	0.0000
-Face-to-Face Interview	Female	24-25	Gurugram	0.0000
-Face-to-Face Interview	Female	24-25	Jaipur	0.0000
-Face-to-Face Interview	Female	24-25	Lucknow	50.0000
-Face-to-Face Interview	Female	24-25	Noida	0.0000
-Face-to-Face Interview	Female	24-25	Patna	100.0000
-Face-to-Face Interview	Male	18-20	Ahmedabad	100.0000
-Face-to-Face Interview	Male	18-20	Chandigarh	100.0000
-Face-to-Face Interview	Male	18-20	Chennai	0.0000
-Face-to-Face Interview	Male	18-20	Delhi	100.0000
-Face-to-Face Interview	Male	18-20	Hyderabad	100.0000
-Face-to-Face Interview	Male	18-20	Jaipur	100.0000
-Face-to-Face Interview	Male	18-20	Mumbai	100.0000
-Face-to-Face Interview	Male	18-20	Noida	100.0000
-Face-to-Face Interview	Male	18-20	Patna	100.0000
-Face-to-Face Interview	Male	18-20	Pune	100.0000
-Face-to-Face Interview	Male	21-23	Ahmedabad	66.6667
-Face-to-Face Interview	Male	21-23	Bengaluru	0.0000
-Face-to-Face Interview	Male	21-23	Delhi	100.0000
-Face-to-Face Interview	Male	21-23	Guwahati	100.0000
-Face-to-Face Interview	Male	21-23	Jaipur	66.6667
-Face-to-Face Interview	Male	21-23	Kochi	100.0000
-Face-to-Face Interview	Male	21-23	Lucknow	100.0000
-Face-to-Face Interview	Male	21-23	Mumbai	100.0000
-Face-to-Face Interview	Male	21-23	Patna	100.0000
-Face-to-Face Interview	Male	21-23	Thiruvananthapuram	100.0000
-Face-to-Face Interview	Male	21-23	Visakhapatnam	100.0000
-Face-to-Face Interview	Male	24-25	Bengaluru	0.0000
-Face-to-Face Interview	Male	24-25	Bhopal	100.0000
-Face-to-Face Interview	Male	24-25	Bhubaneswar	0.0000
-Face-to-Face Interview	Male	24-25	Delhi	100.0000
-Face-to-Face Interview	Male	24-25	Guwahati	50.0000
-Face-to-Face Interview	Male	24-25	Hyderabad	0.0000
-Face-to-Face Interview	Male	24-25	Jaipur	100.0000
-Face-to-Face Interview	Male	24-25	Kochi	0.0000
-Face-to-Face Interview	Male	24-25	Kolkata	75.0000
-Face-to-Face Interview	Male	24-25	Mumbai	100.0000
-Face-to-Face Interview	Male	24-25	Patna	100.0000
+Technical Entrance Test	AgeBand	18-20	19.41
+Technical Entrance Test	AgeBand	21-23	19.89
+Technical Entrance Test	AgeBand	24-25	21.07
+Technical Entrance Test	City	Ahmedabad	22.42
+Technical Entrance Test	City	Bengaluru	21.81
+Technical Entrance Test	City	Bhopal	18.81
+Technical Entrance Test	City	Bhubaneswar	20.38
+Technical Entrance Test	City	Chandigarh	18.62
+Technical Entrance Test	City	Chennai	19.01
+Technical Entrance Test	City	Delhi	19.06
+Technical Entrance Test	City	Gurugram	19.31
+Technical Entrance Test	City	Guwahati	20.04
+Technical Entrance Test	City	Hyderabad	19.45
+Technical Entrance Test	City	Jaipur	19.18
+Technical Entrance Test	City	Kochi	18.00
+Technical Entrance Test	City	Kolkata	23.12
+Technical Entrance Test	City	Lucknow	19.65
+Technical Entrance Test	City	Mumbai	19.08
+Technical Entrance Test	City	Noida	22.81
+Technical Entrance Test	City	Patna	19.08
+Technical Entrance Test	City	Pune	21.14
+Technical Entrance Test	City	Thiruvananthapuram	18.88
+Technical Entrance Test	City	Visakhapatnam	19.75
+Technical Entrance Test	Gender	Female	20.00
+Technical Entrance Test	Gender	Male	20.00
+IQ Test	AgeBand	18-20	25.37
+IQ Test	AgeBand	21-23	26.18
+IQ Test	AgeBand	24-25	22.80
+IQ Test	City	Ahmedabad	20.87
+IQ Test	City	Bengaluru	19.51
+IQ Test	City	Bhopal	23.16
+IQ Test	City	Bhubaneswar	22.92
+IQ Test	City	Chandigarh	23.91
+IQ Test	City	Chennai	23.96
+IQ Test	City	Delhi	26.88
+IQ Test	City	Gurugram	21.00
+IQ Test	City	Guwahati	28.71
+IQ Test	City	Hyderabad	33.70
+IQ Test	City	Jaipur	26.53
+IQ Test	City	Kochi	20.00
+IQ Test	City	Kolkata	19.17
+IQ Test	City	Lucknow	28.00
+IQ Test	City	Mumbai	31.87
+IQ Test	City	Noida	25.00
+IQ Test	City	Patna	32.63
+IQ Test	City	Pune	33.65
+IQ Test	City	Thiruvananthapuram	20.88
+IQ Test	City	Visakhapatnam	20.83
+IQ Test	Gender	Female	25.05
+IQ Test	Gender	Male	24.95
+Descriptive Exam	AgeBand	18-20	20.32
+Descriptive Exam	AgeBand	21-23	26.29
+Descriptive Exam	AgeBand	24-25	26.05
+Descriptive Exam	City	Ahmedabad	25.00
+Descriptive Exam	City	Bengaluru	25.00
+Descriptive Exam	City	Bhopal	22.73
+Descriptive Exam	City	Bhubaneswar	13.64
+Descriptive Exam	City	Chandigarh	13.64
+Descriptive Exam	City	Chennai	30.43
+Descriptive Exam	City	Delhi	40.00
+Descriptive Exam	City	Gurugram	14.29
+Descriptive Exam	City	Guwahati	20.69
+Descriptive Exam	City	Hyderabad	25.81
+Descriptive Exam	City	Jaipur	38.46
+Descriptive Exam	City	Kochi	22.22
+Descriptive Exam	City	Kolkata	26.09
+Descriptive Exam	City	Lucknow	25.00
+Descriptive Exam	City	Mumbai	24.14
+Descriptive Exam	City	Noida	14.29
+Descriptive Exam	City	Patna	29.03
+Descriptive Exam	City	Pune	17.14
+Descriptive Exam	City	Thiruvananthapuram	15.79
+Descriptive Exam	City	Visakhapatnam	35.00
+Descriptive Exam	Gender	Female	29.60
+Descriptive Exam	Gender	Male	18.40
+Face-to-Face Interview	AgeBand	18-20	68.42
+Face-to-Face Interview	AgeBand	21-23	74.51
+Face-to-Face Interview	AgeBand	24-25	51.61
+Face-to-Face Interview	City	Ahmedabad	50.00
+Face-to-Face Interview	City	Bengaluru	50.00
+Face-to-Face Interview	City	Bhopal	80.00
+Face-to-Face Interview	City	Bhubaneswar	0.00
+Face-to-Face Interview	City	Chandigarh	66.67
+Face-to-Face Interview	City	Chennai	57.14
+Face-to-Face Interview	City	Delhi	80.00
+Face-to-Face Interview	City	Gurugram	33.33
+Face-to-Face Interview	City	Guwahati	66.67
+Face-to-Face Interview	City	Hyderabad	50.00
+Face-to-Face Interview	City	Jaipur	70.00
+Face-to-Face Interview	City	Kochi	50.00
+Face-to-Face Interview	City	Kolkata	66.67
+Face-to-Face Interview	City	Lucknow	71.43
+Face-to-Face Interview	City	Mumbai	71.43
+Face-to-Face Interview	City	Noida	50.00
+Face-to-Face Interview	City	Patna	88.89
+Face-to-Face Interview	City	Pune	83.33
+Face-to-Face Interview	City	Thiruvananthapuram	100.00
+Face-to-Face Interview	City	Visakhapatnam	85.71
+Face-to-Face Interview	Gender	Female	60.81
+Face-to-Face Interview	Gender	Male	76.09
 
 -- Q1c: Summarizes a student’s performance by stage and compares it with peers of same gender, city, and age band.
 

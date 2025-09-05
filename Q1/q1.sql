@@ -5,28 +5,24 @@
 
 USE ssd_a1;
 
--- Drop old table if exists (safe for re-import)
+-- drop old table if it exists (safe when reimporting)
 DROP TABLE IF EXISTS admissions;
 
--- Create admissions table to load dataset1
 CREATE TABLE admissions (
-  id BIGINT AUTO_INCREMENT PRIMARY KEY,   -- Unique internal ID
-  StudentID VARCHAR(32),                  -- Student identifier
-  FirstName VARCHAR(100),
-  LastName VARCHAR(100),
+  id BIGINT AUTO_INCREMENT PRIMARY KEY,   -- Internal unique ID
+  StudentID VARCHAR(32) NOT NULL,         -- Student identifier (from dataset)
+  FirstName VARCHAR(100),                 -- First name
+  LastName VARCHAR(100),                  -- Last name
   Age TINYINT,                            -- Age of student
   Gender VARCHAR(16),                     -- Male / Female
-  City VARCHAR(100),
-  State VARCHAR(100),
-  Email VARCHAR(255),
-  PhoneNumber VARCHAR(32),
-  Stage VARCHAR(100),                      -- Stage in admission process
-  ExamDateTime DATETIME,                   -- Timestamp of stage completion
-  Status VARCHAR(32),                      -- 'Pass' or 'Fail'
-  INDEX idx_studentid (StudentID),         -- Index for faster student lookup
-  INDEX idx_stage (Stage),                 -- Index for faster stage-based queries
-  INDEX idx_city (City)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  City VARCHAR(100),                      -- City
+  State VARCHAR(100),                     -- State
+  Email VARCHAR(255),                     -- Email address
+  PhoneNumber VARCHAR(32),                -- Phone number (stored as string)
+  Stage VARCHAR(100),                     -- Admission stage
+  ExamDateTime DATETIME,                  -- Timestamp of stage completion
+  Status VARCHAR(32)                      -- Pass / Fail
+);
 
 -- =========================================
 -- Q1a: Admission Funnel
@@ -35,35 +31,41 @@ CREATE TABLE admissions (
 --   2. Average turnaround time (days) between consecutive stages
 -- =========================================
 
-WITH stage_times AS (
-  SELECT
-    StudentID,
-    Stage,
-    ExamDateTime,
-    -- Get previous stage time per student to calculate turnaround
-    LAG(ExamDateTime) OVER (
-      PARTITION BY StudentID ORDER BY ExamDateTime
-    ) AS prev_stage_time
-  FROM admissions
-),
-per_stage AS (
-  SELECT
-    Stage,
-    COUNT(DISTINCT StudentID) AS NumberOfStudents,  -- Count unique students per stage
-    AVG(
-      TIMESTAMPDIFF(SECOND, prev_stage_time, ExamDateTime) / 86400.0  -- Convert seconds to days
-    ) AS AvgTurnaroundDays
-  FROM stage_times
-  GROUP BY Stage
+WITH StudentProgress AS (
+    SELECT
+        Stage,
+        Status,
+        ExamDateTime,
+        -- This window function finds the timestamp of the next stage for each student.
+        LEAD(ExamDateTime) OVER (PARTITION BY StudentID ORDER BY ExamDateTime) AS NextStageTime,
+        -- This handles duplicates by numbering a student's attempts at the same stage, so we can filter for the latest one.
+        ROW_NUMBER() OVER (PARTITION BY StudentID, Stage ORDER BY ExamDateTime DESC) AS AttemptNum
+    FROM
+        admissions
 )
-SELECT Stage, NumberOfStudents, ROUND(AvgTurnaroundDays,2) AS AvgTurnaroundDays
-FROM per_stage
--- Ensure logical ordering of stages in funnel
-ORDER BY FIELD(Stage,
-  'Technical Entrance Test',
-  'IQ Test',
-  'Descriptive Exam',
-  'Face-to-Face Interview');
+-- The final SELECT statement aggregates the prepared data to build the funnel.
+SELECT
+    Stage,
+    COUNT(*) AS students_started,
+    SUM(CASE WHEN Status = 'Pass' THEN 1 ELSE 0 END) AS students_advanced,
+    SUM(CASE WHEN Status = 'Fail' THEN 1 ELSE 0 END) AS students_dropped_out,
+    -- Calculate the average turnaround time in days, rounded to one decimal place.
+    ROUND(AVG(TIMESTAMPDIFF(HOUR, ExamDateTime, NextStageTime) / 24.0), 1) AS avg_turnaround_days
+FROM
+    StudentProgress
+WHERE
+    AttemptNum = 1 -- This filter ensures we only count the latest attempt for each student-stage combination.
+GROUP BY
+    Stage
+ORDER BY
+    -- The FIELD function ensures the output is in a logical order, not alphabetical.
+    FIELD(Stage,
+        'Technical Entrance Test',
+        'IQ Test',
+        'Descriptive Exam',
+        'Face-to-Face Interview'
+    
+    );
 
 -- =========================================
 -- Q1b: Pass and Fail Rate
@@ -73,32 +75,47 @@ ORDER BY FIELD(Stage,
 --   - City
 -- =========================================
 
-SELECT
+SELECT 
     Stage,
-    Gender,
+    'Gender' AS Dimension,
+    Gender AS Category,
+    ROUND(AVG(CASE WHEN UPPER(Status) = 'PASS' THEN 1 ELSE 0 END) * 100, 2) AS PassRate
+FROM admissions
+GROUP BY Stage, Gender
+
+UNION ALL
+
+SELECT 
+    Stage,
+    'AgeBand' AS Dimension,
     CASE
         WHEN Age BETWEEN 18 AND 20 THEN '18-20'
         WHEN Age BETWEEN 21 AND 23 THEN '21-23'
         WHEN Age BETWEEN 24 AND 25 THEN '24-25'
         ELSE 'Other'
-    END AS AgeBand,                               -- Group ages into bands
-    City,
-    ROUND(AVG(Status = 'Pass') * 100, 6) AS PassRate  -- Calculate pass rate percentage
+    END AS Category,
+    ROUND(AVG(CASE WHEN UPPER(Status) = 'PASS' THEN 1 ELSE 0 END) * 100, 2) AS PassRate
 FROM admissions
-GROUP BY
+GROUP BY Stage, Category
+
+UNION ALL
+
+SELECT 
     Stage,
-    Gender,
-    AgeBand,
-    City
-ORDER BY
+    'City' AS Dimension,
+    City AS Category,
+    ROUND(AVG(CASE WHEN UPPER(Status) = 'PASS' THEN 1 ELSE 0 END) * 100, 2) AS PassRate
+FROM admissions
+GROUP BY Stage, City
+
+ORDER BY 
     FIELD(Stage,
         'Technical Entrance Test',
         'IQ Test',
         'Descriptive Exam',
         'Face-to-Face Interview'),
-    Gender,
-    AgeBand,
-    City;
+    Dimension,
+    Category;
 
 -- =========================================
 -- Q1c: Stored Procedure
@@ -117,7 +134,8 @@ BEGIN
     SELECT
         s.Stage,
         s.student_status AS YourStatus,       -- Student's own status
-        c.CohortPassRate                      -- Average pass rate of other students in same cohort
+        c.PeerPassRate,                       -- Peer pass rate in same cohort
+        (100 - c.PeerPassRate) AS PeerFailRate -- Peer fail rate
     FROM (
         -- Student’s own details
         SELECT
@@ -136,7 +154,7 @@ BEGIN
         WHERE StudentID = p_studentid
     ) s
     LEFT JOIN (
-        -- Cohort stats excluding this student
+        -- Peer stats excluding this student
         SELECT
             Stage,
             Gender,
@@ -147,7 +165,7 @@ BEGIN
                 WHEN Age BETWEEN 24 AND 25 THEN '24-25'
                 ELSE 'Other'
             END AS AgeBand,
-            ROUND(AVG(Status = 'Pass') * 100, 2) AS CohortPassRate
+            ROUND(AVG(CASE WHEN UPPER(Status) = 'PASS' THEN 1 ELSE 0 END) * 100, 2) AS PeerPassRate
         FROM admissions
         WHERE StudentID <> p_studentid
         GROUP BY Stage, Gender, City, AgeBand
@@ -165,5 +183,5 @@ END$$
 
 DELIMITER ;
 
--- Example call to procedure
-CALL sp_student_summary('S202507954');
+-- Example call
+CALL sp_student_summary('S202507930');

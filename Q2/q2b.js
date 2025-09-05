@@ -1,53 +1,121 @@
+// ============================
 // Q2(b.1) — Top 5 hottest days nationwide
+// ============================
+
 print("\n[Q2(b.1)] Top 5 hottest days nationwide:\n");
+
 db.temps.aggregate([
-  { $set: { dateObj: { $dateFromString: { dateString: "$date" } } } },
-  { $project: { dateObj: 1, val: { $convert: { input: "$temp.avg_c", to: "double", onError: null, onNull: null } } } },
-  { $group: { _id: "$dateObj", nationwide_avg_temp: { $avg: "$val" } } },
+  { $set: { dateObj: { $dateFromString: { dateString: "$date", onError: null, onNull: null } } } },
+  { $set: { avg_temp: { $toDouble: "$temp.avg_c" } } },
+  { $group: { _id: "$dateObj", nationwide_avg_temp: { $avg: "$avg_temp" } } },
   { $sort: { nationwide_avg_temp: -1 } },
-  { $limit: 5 }
+  { $limit: 5 },
+  { $project: {
+      _id: 0,
+      date: { $dateToString: { format: "%Y-%m-%d", date: "$_id" } },
+      nationwide_avg_temp: { $round: ["$nationwide_avg_temp", 2] }
+  }}
 ]).forEach(doc => print(EJSON.stringify(doc)));
 
 
+
+// ============================
 // Q2(b.2) — Top 5 coldest days nationwide
+// ============================
+
 print("\n[Q2(b.2)] Top 5 coldest days nationwide:\n");
+
 db.temps.aggregate([
-  { $set: { dateObj: { $dateFromString: { dateString: "$date" } } } },
-  { $project: { dateObj: 1, val: { $convert: { input: "$temp.avg_c", to: "double", onError: null, onNull: null } } } },
-  { $group: { _id: "$dateObj", nationwide_avg_temp: { $avg: "$val" } } },
+  { $set: { dateObj: { $dateFromString: { dateString: "$date", onError: null, onNull: null } } } },
+  { $set: { avg_temp: { $toDouble: "$temp.avg_c" } } },
+  { $group: { 
+      _id: "$dateObj", 
+      nationwide_avg_temp: { $avg: "$avg_temp" } 
+  }},
   { $sort: { nationwide_avg_temp: 1 } },
-  { $limit: 5 }
+  { $limit: 5 },
+  { $project: {
+      _id: 0,
+      date: { $dateToString: { format: "%Y-%m-%d", date: "$_id" } },
+      nationwide_avg_temp: { $round: ["$nationwide_avg_temp", 2] }
+  }},
+  { $sort: { date: 1 } }
 ]).forEach(doc => print(EJSON.stringify(doc)));
 
 
-// Q2(b.3) — Was it raining in Mumbai on 2025-06-15?
-print("\n[Q2(b.3)] Was it raining in Mumbai on 2025-06-15?\n");
-var rain = db.temps.aggregate([
-  { $match: { city: "Mumbai", date: "2025-06-15" } },
-  { $group: { _id: null, condition: { $first: "$condition" }, totalPrecip: { $sum: { $ifNull: ["$precip_mm", 0] } } } }
+
+// ============================
+// Q2(b.3) — Check if it rained
+// ============================
+
+var cityToCheck = "Navi Mumbai";
+var dateToCheck = "2025-06-17";
+
+print(`\n[Q2(b.3)] Was it raining in ${cityToCheck} on ${dateToCheck}?\n`);
+
+var rain = db.weather.aggregate([
+  { $match: { city: cityToCheck, date: dateToCheck } },
+  { 
+    $group: { 
+      _id: null, 
+      condition: { $first: "$condition" }, 
+      totalPrecip: { $sum: { $ifNull: ["$precip_mm", 0] } } 
+    } 
+  }
 ]).toArray()[0];
+
 if (rain) {
-  var rained = rain.totalPrecip > 0;
-  print(EJSON.stringify({ city: "Mumbai", date: "2025-06-15", rained: rained, condition: rain.condition, precipitation_mm: rain.totalPrecip }));
+  var output = {
+    city: cityToCheck,
+    date: dateToCheck,
+    rained: rain.totalPrecip > 0,
+    condition: rain.condition,
+    precipitation_mm: rain.totalPrecip
+  };
+  print(EJSON.stringify(output));
 } else {
-  print(EJSON.stringify({ city: "Mumbai", date: "2025-06-15", rained: false, condition: null, precipitation_mm: 0 }));
+  print(EJSON.stringify({
+    city: cityToCheck,
+    date: dateToCheck,
+    rained: false,
+    condition: null,
+    precipitation_mm: 0
+  }));
 }
 
 
-// Q2(b.4) — 7-day moving average for Delhi (last 10 days of June)
-print("\n[Q2(b.4)] 7-day moving average for Delhi (last 10 days of June):\n");
+// ============================
+// Q2(b.4) — 7-day moving average
+// ============================
+
+var cityToCheck = "Delhi";
+var startDate = "2025-05-24";
+var endDate = "2025-06-14";
+
+print(`\n[Q2(b.4)] 7-day moving average for ${cityToCheck} (${startDate} to ${endDate}):\n`);
+
 db.temps.aggregate([
-  { $match: { city: "Delhi" } },
-  { $set: { dateObj: { $dateFromString: { dateString: "$date" } } } },
+  { $match: { city: cityToCheck } },
+  { $set: { dateObj: { $dateFromString: { dateString: "$date", onError: null, onNull: null } } } },
+  { $set: { avg_temp: { $toDouble: "$temp.avg_c" } } },
   { $sort: { dateObj: 1 } },
   { $setWindowFields: {
       partitionBy: "$city",
       sortBy: { dateObj: 1 },
       output: {
-        seven_day_avg_temp: { $avg: { $convert: { input: "$temp.avg_c", to: "double", onError: null, onNull: null } }, window: { documents: [-6, 0] } }
+        seven_day_avg_temp: {
+          $avg: "$avg_temp",
+          window: { documents: [-6, 0] }
+        }
       }
   }},
-  { $project: { _id: 0, date: "$dateObj", avg_c: { $convert: { input: "$temp.avg_c", to: "double", onError: null, onNull: null } }, seven_day_avg_temp: { $round: ["$seven_day_avg_temp", 6] } } },
-  { $match: { date: { $gte: ISODate("2025-06-21T00:00:00Z"), $lte: ISODate("2025-06-30T23:59:59Z") } } },
+  { $project: {
+      _id: 0,
+      date: { $dateToString: { format: "%Y-%m-%d", date: "$dateObj" } },
+      avg_c: "$avg_temp",
+      seven_day_avg_temp: { $round: ["$seven_day_avg_temp", 6] }
+  }},
+  { $match: { date: { $gte: startDate, $lte: endDate } } },
   { $sort: { date: 1 } }
 ]).forEach(doc => print(EJSON.stringify(doc)));
+

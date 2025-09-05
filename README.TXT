@@ -24,7 +24,7 @@ Execution:
        (c) Stored Procedure `sp_student_summary(StudentID)` which:
            - Accepts a StudentID as input.
            - Returns the student’s performance per stage.
-           - Compares with cohort performance (gender, city, age band).
+           - Compares with cohort performance (peer pass/fail by same stage, gender, city, age band).
 3. Query results are provided in `q1_results.txt`.
 
 
@@ -34,6 +34,7 @@ Assumptions:
 - Age bands are grouped as: 18–20, 21–23, 24–25, Other.
 - Average turnaround time is calculated in days between consecutive stages.
 - Missing or null timestamps are excluded from turnaround calculations.
+- Cohort comparison uses peer pass/fail counts, excluding the student themselves.
 
 
 --------------------------------------------------
@@ -60,14 +61,15 @@ Execution:
    This script outputs:
      (b.1) Top 5 hottest days nationwide.
      (b.2) Top 5 coldest days nationwide.
-     (b.3) Rain check for Mumbai on 2025-06-15.
-     (b.4) 7-day moving average for Delhi (last 10 days of June).
+     (b.3) Rain check for Navi Mumbai on 2025-06-17.
+     (b.4) 7-day moving average for Delhi (2025-05-24 to 2025-06-14).
    Results are provided in `q2b_results.txt`.
 
 Assumptions:
 - Temperature values are stored under `temp.avg_c`.
 - Precipitation is considered as `precip_mm` (default 0 if null).
 - Rain is considered to have occurred if precipitation > 0.
+- Daily averages include month info for easier grouping.
 - All dates are between Jan–Jun 2025 (per assignment spec).
 
 
